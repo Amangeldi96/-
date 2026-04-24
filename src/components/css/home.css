@@ -1,0 +1,534 @@
+/* 1. Кыргыз тамгаларын колдогон шрифтти жүктөө */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px; /* Телефондо четтеринен боштук болушу үчүн */
+  font-family: 'Montserrat', sans-serif; /* Негизги шрифт */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Саламдашуу блогу */
+.hero-banner {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #007aff 0%, #00c6ff 100%);
+  border-radius: 24px;
+  color: white;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
+}
+
+.hero-banner h1 {
+  font-size: 2.5rem; /* Телефонго ылайыкташтырылган өлчөм */
+  margin-bottom: 15px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-banner p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Карталардын сеткасы */
+.main-grid {
+  display: grid;
+  /* Телефондо 1 колонка, компьютерде автоматтык түрдө көбөйөт */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 20px;
+}
+
+/* Жеке картанын стили */
+.feature-card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #eef2f6;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: #007aff;
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  background: #f0f7ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  color: #1d1d1f;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #6e6e73;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.go-btn {
+  width: 100%; /* Телефондо басууга оңой болушу үчүн кеңейтилди */
+  max-width: 200px;
+  padding: 12px;
+  background: #007aff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ТЕЛЕФОНДОР ҮЧҮН АТАЙЫН ЖӨНДӨӨ (Responsive) */
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 40px 15px;
+    margin-bottom: 30px;
+  }
+
+  .hero-banner h1 {
+    font-size: 1.8rem; /* Телефондо текст бир аз кичирейет */
+  }
+
+  .hero-banner p {
+    font-size: 1rem;
+  }
+
+  .main-grid {
+    gap: 15px; /* Карталардын ортосундагы аралык азаят */
+  }
+
+  .feature-card {
+    padding: 25px 15px;
+  }
+}
+
+/* Күндүн беренеси блогу */
+.daily-article-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.daily-article-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.daily-tag {
+  display: inline-block;
+  background: #eef6ff;
+  color: #007aff;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.daily-article-card h3 {
+  margin-bottom: 10px;
+  color: #1d1d1f;
+}
+
+.daily-article-card p {
+  color: #6e6e73;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.daily-article-card span {
+  display: block;
+  margin-top: 15px;
+  color: #007aff;
+  font-weight: 600;
+}
+
+
+
+
+
+/* --- ГАНА ДИАГРАММА ЖАНА ЛИДЕРЛЕР БӨЛҮМҮ --- */
+
+/* Premium Stats Card - Негизги Ак Фон */
+.premium-stats-card {
+  background: #ffffff; 
+  border-radius: 30px;
+  padding: 25px;
+  color: #1e293b;
+  margin-top: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+  border: 1px solid #f1f5f9;
+}
+
+.stats-content-wrapper {
+  display: grid;
+  grid-template-columns: 1.4fr 1.1fr; /* Диаграмма жана Тизмек жанаша */
+  gap: 25px;
+}
+
+/* СОЛ ТАРАП: ДИАГРАММА */
+.chart-main-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-main-title {
+  color: #0f172a;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 5px 0 15px 0;
+  transition: all 0.3s ease;
+}
+
+.chart-label {
+  color: #94a3b8;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.responsive-chart-container {
+  height: 200px;
+}
+
+/* ОҢ ТАРАП: ТИЗМЕК ЖАНА СКРОЛЛ */
+.users-list-side {
+  background: #f7fbff;
+  border: 1px solid #bfdbfe !important;
+  border-radius: 24px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-section-title {
+  color: #94a3b8;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.scroll-container {
+  max-height: 250px; /* Тизменин бийиктиги */
+  overflow-y: auto;  /* Скроллду иштетүү */
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Скроллдун сулуу дизайны */
+.scroll-container::-webkit-scrollbar {
+  width: 5px;
+}
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+.scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* АР БИР САПТЫН СТИЛИ */
+.user-mini-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  cursor: pointer; /* Чычканды алып барганда колдун иконкасы чыгат */
+  transition: all 0.2s ease-in-out;
+}
+
+.user-mini-row:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #e2e8f0;
+}
+
+/* ТАНДАЛГАН (ACTIVE) САПТЫН СТИЛИ */
+.active-row {
+  background: #f7fbff !important;
+}
+
+.user-info-brief {
+  display: flex;
+  flex-direction: row; /* Иконка жана текст капталма-каптал */
+  align-items: center;
+  gap: 12px;
+}
+
+/* АВАТАРЛАР */
+.avatar-mini {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: bold;
+  background-color: #f1f5f9;
+  color: #64748b;
+  transition: all 0.3s ease;
+}
+
+.is-active-avatar {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+/* ТЕКСТТЕР */
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.u-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.u-date {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.u-score {
+  background: #f8fafc;
+  color: #2563eb;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  border: 1px solid #e2e8f0;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Тандалган саптын упайынын түсү */
+.active-row .u-score {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* МОБИЛДИК ВЕРСИЯ */
+@media (max-width: 850px) {
+  .stats-content-wrapper {
+    grid-template-columns: 1fr; /* Биринин астына бири түшөт */
+  }
+  
+  .premium-stats-card {
+    padding: 15px;
+  }
+
+  .responsive-chart-container {
+    height: 150px;
+  }
+}
+
+
+/* Аватар жана Статус */
+.avatar-wrapper {
+  position: relative;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid #f1f5f9; /* Фон менен аралашпоо үчүн */
+}
+
+.status-indicator.online {
+  background-color: #10b981; /* Жашыл */
+  box-shadow: 0 0 5px rgba(16, 185, 129, 0.4);
+}
+
+.status-indicator.offline {
+  background-color: #ef4444; /* Кызыл */
+}
+
+/* СМС Баскычы */
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-icon-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-icon-btn:hover {
+  background: #eff6ff;
+  color: #2563eb;
+  transform: scale(1.1);
+}
+
+.active-row .chat-icon-btn {
+  color: #2563eb;
+}
+
+/* Мурунку саптын стилине кошумча */
+.user-mini-row {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+
+
+/* загрузка үчүн скелетон стили */
+/* Жалпы анимация - Сыйкыр ушул жерде */
+.skeleton-wrapper .sk-title,
+.skeleton-wrapper .sk-subtitle,
+.skeleton-wrapper .sk-tag,
+.skeleton-wrapper .sk-line,
+.skeleton-wrapper .sk-icon,
+.skeleton-wrapper .sk-btn {
+  background: #e0e0e0;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Баннер скелети */
+.skeleton-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #f9f9f9 !important; /* Баннердин фонун бир аз ачык кылабыз */
+}
+.sk-title { width: 60%; height: 40px; }
+.sk-subtitle { width: 80%; height: 20px; }
+
+/* Күндүн беренеси скелети */
+.sk-daily-card { 
+  background: white; 
+  border: 1px solid #eee; 
+  pointer-events: none;
+}
+.sk-tag { width: 120px; height: 24px; margin-bottom: 20px; }
+.sk-line { height: 16px; margin-bottom: 12px; }
+.sk-line.full { width: 100%; }
+.sk-line.large { width: 70%; height: 25px; margin-bottom: 20px; }
+.sk-line.medium { width: 50%; }
+.sk-line.small { width: 40%; height: 20px; }
+.sk-line.center { margin: 0 auto 15px auto; }
+
+/* Төмөнкү карточкалар (Grid) */
+.sk-card {
+  text-align: center;
+  background: white;
+  pointer-events: none;
+}
+.sk-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% !important;
+  margin: 0 auto 15px auto;
+}
+.sk-btn {
+  width: 80%;
+  height: 35px;
+  margin: 15px auto 0 auto;
+}
+/* Header скелетинин контейнери */
+.skeleton-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: white;
+  border-bottom: 1px solid #eee;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* Логотиптин ордуна тегерек же сүйрү форма */
+.sk-logo {
+  width: 120px;
+  height: 35px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Меню пункттарынын скелети */
+.sk-nav-items {
+  display: flex;
+  gap: 20px;
+}
+
+.sk-nav-item {
+  width: 70px;
+  height: 15px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Shimmer анимациясы мурунку коддо бар, ошону колдонот */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

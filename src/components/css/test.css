@@ -1,0 +1,339 @@
+/* Кыргызча тексттер үчүн Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap');
+/* Жалпы шрифт */
+body {
+  font-family: 'Noto Sans', 'Poppins', sans-serif;
+  color: #2d3436;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* --- НЕГИЗГИ КОНТЕЙНЕР --- */
+.quiz-main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background-color: #f0f2f5; /* Жумшак фону */
+  min-height: 90vh;
+}
+
+/* --- ТЕСТ КАРТОЧКАСЫ --- */
+.quiz-card {
+  background: #ffffff;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+  padding: 35px !important;
+  width: 100%;
+  max-width: 750px !important;
+  border: none !important;
+  transition: transform 0.3s ease;
+}
+
+/* --- ЖОГОРКУ БӨЛҮМ (Header) --- */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.quiz-category-tag {
+  background: #e7f3ff;
+  color: #007bff;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quiz-counter {
+  font-weight: 600;
+  color: #636e72;
+  font-size: 15px;
+}
+
+/* --- ПРОГРЕСС БАР --- */
+.quiz-progress-bar {
+  height: 8px;
+  background: #dfe6e9;
+  border-radius: 10px;
+  margin-bottom: 35px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff, #00d2ff);
+  border-radius: 10px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --- СУРОО ТЕКСТИ --- */
+.question-text {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: #2d3436 !important;
+  margin-bottom: 30px !important;
+  line-height: 1.4 !important;
+}
+
+/* --- ВАРИАНТТАР (Grid) --- */
+.options-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.option-card {
+  display: flex;
+  align-items: center;
+  padding: 20px 25px !important;
+  border: 2px solid #f1f3f5 !important;
+  border-radius: 18px !important;
+  background: #fdfdfd;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.option-card:hover {
+  border-color: #b2bec3 !important;
+  background: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.option-card.selected {
+  border-color: #007bff !important;
+  background: #f0f7ff !important;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+}
+
+/* --- ИНДИКАТОРЛОР (Radio/Checkbox) --- */
+.check-indicator {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #cbd5e0;
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.check-indicator.radio { border-radius: 50%; }
+.check-indicator.checkbox { border-radius: 6px; }
+
+.option-card.selected .check-indicator {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+.check-dot {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: inherit;
+}
+
+.option-label {
+  font-size: 17px;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+
+/* --- БАСКЫЧ (Button) --- */
+.next-btn {
+  margin-top: 40px;
+  width: 100%;
+  padding: 18px !important;
+  border-radius: 16px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+}
+
+.next-btn.disabled {
+  background: #dcdde1 !important;
+  color: #7f8c8d !important;
+  cursor: not-allowed;
+}
+
+.next-btn.active {
+  background: #007bff !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+}
+
+.next-btn.active:hover {
+  background: #0056b3 !important;
+  transform: translateY(-2px);
+}
+
+/* --- ЖЫЙЫНТЫК ЭКРАНЫ --- */
+.result-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.result-box {
+  text-align: center;
+  padding: 50px !important;
+}
+
+.score-text {
+  font-size: 20px;
+  margin: 25px 0 10px;
+  color: #636e72;
+}
+
+.score-text span {
+  font-size: 48px;
+  font-weight: 900;
+  color: #007bff;
+  display: block;
+}
+
+.percentage {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2ecc71;
+  margin-bottom: 30px;
+}
+
+.restart-btn {
+  background: #2d3436 !important;
+}
+
+.stat-grid { display: flex; gap: 15px; justify-content: center; margin: 20px 0; }
+.stat-item { padding: 10px 20px; border-radius: 8px; color: white; font-weight: bold; }
+.stat-item.correct { background: #2ecc71; }
+.stat-item.wrong { background: #e74c3c; }
+.stat-item.empty { background: #f1c40f; }
+
+.review-list { text-align: left; max-height: 400px; overflow-y: auto; margin-bottom: 20px; padding: 10px; border: 1px solid #eee; }
+.review-item { border-bottom: 1px solid #ddd; padding: 10px 0; }
+.your-ans { color: #e74c3c; font-size: 0.9em; }
+.correct-ans { color: #2ecc71; font-weight: bold; font-size: 0.9em; }
+
+.timer { font-size: 1.2em; font-weight: bold; color: #e74c3c; }
+.nav-btns { display: flex; justify-content: space-between; margin-top: 20px; }
+.nav-btns button { padding: 10px 25px; border-radius: 5px; cursor: pointer; border: none; }
+.nav-btns button.active { background: #3498db; color: white; }
+
+/* Тил которгуч үчүн кошумча стиль */
+.lang-btn {
+  padding: 8px 20px;
+  border-radius: 12px;
+  border: 2px solid #f1f3f5;
+  background: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.lang-btn-mini {
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid #dfe6e9;
+  background: white;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.lang-btn-mini.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* Review-list ичиндеги scrollbar жумшартуу */
+.review-list::-webkit-scrollbar {
+  width: 6px;
+}
+.review-list::-webkit-scrollbar-thumb {
+  background-color: #dfe6e9;
+  border-radius: 10px;
+}
+
+
+
+/* ТаймерBadge (Саат иконкасы менен) */
+.timer-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff5f5;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.timer-badge svg {
+  stroke: #e74c3c;
+}
+
+.timer {
+  font-size: 14px !important;
+  color: #e74c3c !important;
+  margin: 0;
+}
+
+/* Навигация баскычтарын бир сапка тизүү */
+.nav-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+/* Компакттуулук үчүн суроо текстинин шрифтин бир аз кичирейтүү (мобилдик үчүн) */
+@media (max-width: 600px) {
+  .question-text {
+    font-size: 20px !important;
+  }
+  .quiz-card {
+    padding: 20px !important;
+  }
+}
+
+
+
+/* Тил которгуч стили */
+.lang-mini-switcher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.lang-mini-switcher button {
+  border: none;
+  background: transparent;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #64748b;
+  border-radius: 8px;
+}
+
+.lang-mini-switcher button.active-lang {
+  background: white;
+  color: #4f46e5;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

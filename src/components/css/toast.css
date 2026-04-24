@@ -1,0 +1,70 @@
+/* --- ЗАМАНБАП БИЛДИРҮҮЛӨР (TOAST) --- */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 30000; /* Бардыгынын үстүндө турат */
+}
+
+.toast {
+    background: white;
+    color: #333;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transform: translateX(120%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-left: 5px solid #5995fd;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast.success {
+    border-left-color: #2ecc71; /* Жашыл - ийгилик */
+}
+
+.toast.error {
+    border-left-color: #e74c3c; /* Кызыл - ката */
+}
+
+.toast i {
+    font-size: 1.2rem;
+}
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 99999;
+}
+
+.toast {
+  background: #333;
+  color: rgb(219, 30, 30);
+  padding: 10px 15px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.3s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background: #28a745;
+}
+
+.toast.error {
+  background: #e74c3c;
+}
